@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>The Library</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../static/css/indexLayout.css" th:href="@{/css/indexLayout.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="wrapper row1">
+    <header id="header" class="clear">
+        <div id="hgroup">
+            <h1><a href="#">The Library</a></h1>
+            <h2>Free book repository for all</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">All books</a></li>
+                <li><a href="#">Authors</a></li>
+                <li class="last"><a href="#">Genres</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+<!-- content -->
+<div class="wrapper row2">
+    <div id="container" class="clear">
+        <!-- content body -->
+        <section id="shout">
+            <h1>A book is a dream that you hold in your hand</h1>
+            <p>- Neil Gaiman</p>
+        </section>
+        <div class="delimiter">- Some our books -</div>
+        <!-- books content -->
+        <section id="books" class="clear" style="">
+            <!-- article 1 -->
+            <article class="one_third">
+                <h2 th:text="${books.get(0).getName()}">Book 1</h2>
+                <img th:src="@{'/img/book/' + ${books.get(0).getId()}}" alt="Book image"/>
+
+                <p th:text="${books.get(0).getDescription()}">First description</p>
+                <footer class="more"><a th:href="@{'/book/' + ${books.get(0).getId()}}">About this book &raquo;</a>
+                </footer>
+            </article>
+            <!-- article 2 -->
+            <article class="one_third">
+                <h2 th:text="${books.get(1).getName()}">Book 2</h2>
+                <img th:src="@{'/img/book/' + ${books.get(1).getId()}}" alt="Book image"/>
+
+                <p th:text="${books.get(1).getDescription()}">Second description</p>
+                <footer class="more"><a th:href="@{'/book/' + ${books.get(1).getId()}}">About this book &raquo;</a>
+                </footer>
+            </article>
+            <!-- article 3 -->
+            <article class="one_third lastbox">
+                <h2 th:text="${books.get(2).getName()}">Book 3</h2>
+                <img th:src="@{'/img/book/' + ${books.get(2).getId()}}" alt="Book image"/>
+
+                <p th:text="${books.get(2).getDescription()}">Third description</p>
+                <footer class="more"><a th:href="@{'/book/' + ${books.get(2).getId()}}">About this book &raquo;</a>
+                </footer>
+            </article>
+        </section>
+        <!-- /books content -->
+        <div class="delimiter">- Some our authors -</div>
+        <!-- authors content -->
+        <section id="authors" class="clear" style="">
+            <!-- article 1 -->
+            <article class="one_third">
+                <h2 th:text="${authors.get(0).getName()}">Author1</h2>
+                <img th:src="@{'/img/author/' + ${authors.get(0).getId()}}" alt="Author image"/>
+
+                <p th:text="${authors.get(0).getDescription()}">First description</p>
+                <footer class="more"><a th:href="@{'/author/' + ${authors.get(0).getId()}}">About this
+                    author &raquo;</a></footer>
+            </article>
+            <!-- article 2 -->
+            <article class="one_third">
+                <h2 th:text="${authors.get(1).getName()}">Author2</h2>
+                <img th:src="@{'/img/author/' + ${authors.get(1).getId()}}" alt="Author image"/>
+
+                <p th:text="${authors.get(1).getDescription()}">Second description</p>
+                <footer class="more"><a th:href="@{'/author/' + ${authors.get(1).getId()}}">About this
+                    author &raquo;</a></footer>
+            </article>
+            <!-- article 3 -->
+            <article class="one_third lastbox">
+                <h2 th:text="${authors.get(2).getName()}">Author3</h2>
+                <img th:src="@{'/img/author/' + ${authors.get(2).getId()}}" alt="Author image"/>
+
+                <p th:text="${authors.get(2).getDescription()}">Third description</p>
+                <footer class="more"><a th:href="@{'/author/' + ${authors.get(2).getId()}}">About this
+                    author &raquo;</a></footer>
+            </article>
+        </section>
+        <!-- /authors content -->
+        <div class="delimiter">- Some genres -</div>
+        <!-- /content body -->
+    </div>
+</div>
+<!-- genres content -->
+<div id="genres">
+    <a th:href="@{'/search/' + ${genres.get(0).getId()}}" th:text="${genres.get(0).getName()}">Genre 1</a>
+    <a th:href="@{'/search/' + ${genres.get(1).getId()}}" th:text="${genres.get(1).getName()}">Genre 2</a>
+    <a th:href="@{'/search/' + ${genres.get(2).getId()}}" th:text="${genres.get(2).getName()}">Genre 3</a>
+    <a th:href="@{'/search/' + ${genres.get(3).getId()}}" th:text="${genres.get(3).getName()}">Genre 4</a>
+    <a th:href="@{'/search/' + ${genres.get(4).getId()}}" th:text="${genres.get(4).getName()}">Genre 5</a>
+</div>
+<!-- /genres content -->
+<!-- footer -->
+<div class="wrapper row3">
+    <footer id="footer" class="clear">
+        <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="https://github.com/ddovgal">Dima Dovgal</a></p>
+        <p class="fl_right">Spring MVC - Thymeleaf </p>
+    </footer>
+</div>
+</body>
+</html>

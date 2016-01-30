@@ -1,0 +1,460 @@
+/*
+HTML 5 Template Name: Basic 79
+File: Layout CSS
+Author: OS Templates
+Author URI: http://www.os-templates.com/
+Licence: <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>
+*/
+
+html {
+    overflow-y: scroll;
+}
+
+/* Forces a scrollbar when the viewport is larger than the websites content - CSS3 */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    font-family: Georgia, "Times New Roman", Times, serif;
+    color: #979797;
+    background-color: #FFFFFF;
+}
+
+.clear:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+}
+
+.clear {
+    display: block;
+    clear: both;
+}
+
+html[xmlns] .clear {
+    display: block;
+}
+
+* html .clear {
+    height: 1%;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+code {
+    font-weight: normal;
+    font-style: normal;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.fl_left {
+    float: left;
+}
+
+.fl_right {
+    float: right;
+}
+
+img {
+    margin-top: 14px;
+    margin-right: -4px;
+    margin-left: -4px;
+    margin-bottom: -4px;
+    padding: 0;
+    border: none;
+    line-height: normal;
+    vertical-align: middle;
+    border-radius: 10px;
+}
+
+.imgholder, .imgl, .imgr {
+    padding: 4px;
+    border: 1px solid #D6D6D6;
+    text-align: center;
+}
+
+.imgl {
+    float: left;
+    margin: 0 15px 15px 0;
+    clear: left;
+}
+
+.imgr {
+    float: right;
+    margin: 0 0 15px 15px;
+    clear: right;
+}
+
+/*----------------------------------------------HTML 5 Overrides-------------------------------------*/
+
+address, article, aside, figcaption, figure, footer, header, nav, section {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+q {
+    display: block;
+    padding: 0 10px 8px 10px;
+    color: #979797;
+    background-color: #ECECEC;
+    font-style: italic;
+    line-height: normal;
+}
+
+q:before {
+    content: '“ ';
+    font-size: 26px;
+}
+
+q:after {
+    content: ' „';
+    font-size: 26px;
+    line-height: 0;
+}
+
+/* ----------------------------------------------Wrapper-------------------------------------*/
+
+div.wrapper {
+    display: block;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+}
+
+.row1, .row1 a {
+    color: #979797;
+    background-color: #FFFFFF;
+}
+
+.row2 {
+    color: #979797;
+    background-color: #FFFFFF;
+}
+
+.row2 a {
+    color: #B56D00;
+    background-color: #FFFFFF;
+    text-align: left;
+    float: right;
+    margin-top: -10px;
+    margin-right: 7px;
+}
+
+.row3 {
+    border-top: 1px solid #DEDEDE;
+}
+
+.row3, .row3 a {
+    color: #979797;
+    background-color: #FFFFFF;
+}
+
+/*----------------------------------------------Generalise-------------------------------------*/
+
+#header, #container, #footer {
+    display: block;
+    width: 960px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+address {
+    font-style: normal;
+}
+
+blockquote, q {
+    display: block;
+    padding: 8px 10px;
+    color: #979797;
+    background-color: #ECECEC;
+    font-style: italic;
+    line-height: normal;
+}
+
+blockquote:before, q:before {
+    content: '“ ';
+    font-size: 26px;
+}
+
+blockquote:after, q:after {
+    content: ' „';
+    font-size: 26px;
+    line-height: 0;
+}
+
+.one_third, .two_third, .three_third {
+    display: block;
+    float: left;
+    margin: 0 30px 0 0;
+}
+
+.one_third {
+    width: 300px;
+}
+
+.two_third {
+    width: 630px;
+}
+
+.three_third {
+    width: 960px;
+    float: none;
+    margin-right: 0;
+    clear: both;
+}
+
+.lastbox {
+    margin-right: 0;
+}
+
+/*----------------------------------------------Header-------------------------------------*/
+
+#header {
+}
+
+#header #hgroup {
+    padding: 20px 0 0 0;
+    float: left;
+}
+
+#header #hgroup h1, #header #hgroup h2 {
+    font-weight: normal;
+    text-transform: none;
+}
+
+#header #hgroup h1 {
+    font-size: 36px;
+}
+
+#header #hgroup h2 {
+    font-size: 13px;
+}
+
+#header nav {
+    display: block;
+    float: right;
+    margin: 20px 0 0 0;
+    padding: 20px 0;
+}
+
+#header nav ul {
+}
+
+#header nav li {
+    display: inline;
+    margin-right: 25px;
+    text-transform: uppercase;
+}
+
+#header nav li.last {
+    margin-right: 0;
+}
+
+#header nav li a {
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-bottom: 4px;
+    color: #FFFFFF;
+    background-color: #666666;
+    border-radius: 5px;
+}
+
+#header nav li a:hover {
+    color: #979797;
+    background-color: #FFFFFF;
+}
+
+/*----------------------------------------------Content Area-------------------------------------*/
+
+#container {
+    padding: 30px 0;
+    text-align: left;
+}
+
+.wrapper.row2 #container label {
+
+}
+
+#container section {
+    display: block;
+    width: 100%;
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+
+#container .last {
+    margin: 0;
+}
+
+#container .more {
+    text-align: right;
+}
+
+/* ------Shout-----*/
+
+#container #shout {
+    margin-bottom: 50px;
+    padding: 30px 0;
+    border-top: 1px solid #DEDEDE;
+    border-bottom: 1px solid #DEDEDE;
+}
+
+#container #shout h1 {
+    font-size: 50px;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#container #shout p {
+    font-size: 16px;
+    padding-bottom: 0;
+    line-height: 1.8em;
+    text-align: right;
+    margin-bottom: -10px;
+    padding-right: 20px;
+    margin-top: 5px;
+}
+
+/* ------Books-----*/
+
+#container #books {
+    margin-bottom: 30px;
+    line-height: 1.6em;
+    margin-top: 30px;
+}
+
+#container #books article {
+
+}
+
+#container #books article h2 {
+    font-size: 19px;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+#container #books article p {
+    margin-top: 10px;
+    padding: 0;
+}
+
+#container #books article img {
+    float: left;
+    width: 100px;
+    height: 140px;
+    margin-right: 13px;
+    margin-left: 0;
+    padding: 4px;
+    border: 1px solid #DEDEDE;
+}
+
+#container #books article footer {
+    margin: 10px 0 0 0;
+}
+
+/* ------Authors-----*/
+
+#container #authors {
+    margin-bottom: 30px;
+    line-height: 1.6em;
+    margin-top: 30px;
+}
+
+#container #authors article {
+
+}
+
+#container #authors article h2 {
+    font-size: 19px;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+#container #authors article p {
+    margin-top: 10px;
+    padding: 0;
+}
+
+#container #authors article img {
+    float: left;
+    width: 100px;
+    height: 140px;
+    margin-right: 13px;
+    margin-left: 0;
+    padding: 4px;
+    border: 1px solid #DEDEDE;
+}
+
+#container #authors article footer {
+    margin: 10px 0 0 0;
+}
+
+/*----------------------------------------------Genres-------------------------------------*/
+
+#genres {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: large;
+    margin-bottom: 45px;
+}
+#genres a{
+    padding: 2px 8px;
+    color: #FFFFFF;
+    background-color: #666666;
+    border-radius: 5px;
+    margin-left: 3px;
+    margin-right: 4px;
+}
+#genres a:hover{
+    color: #979797;
+    background-color: #FFFFFF;
+}
+
+/*----------------------------------------------Footer-------------------------------------*/
+
+#footer {
+    padding: 20px 0;
+}
+
+#footer p {
+    margin: 0;
+    padding: 0;
+}
+
+.delimiter {
+    text-align: center;
+    font-size: 33px;
+    font-style: normal;
+    color: #7E7E7E;
+    font-variant: normal;
+    text-shadow: 0px 0px;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+
+}
