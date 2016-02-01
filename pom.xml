@@ -47,6 +47,15 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!--JPAMetaModelEntityProcessor-->
+		<!--<dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-jpamodelgen</artifactId>
+            <version>5.0.7.Final</version>
+        </dependency>-->
+		<!--/JPAMetaModelEntityProcessor-->
+
 	</dependencies>
 	
 	<build>
@@ -55,8 +64,83 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+
+			<!--JPAMetaModelEntityProcessor1-->
+			<!--<plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <compilerArguments>
+                        <processor>org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor</processor>
+                    </compilerArguments>
+                </configuration>
+            </plugin>-->
+			<!--/JPAMetaModelEntityProcessor1-->
+
+			<!--JPAMetaModelEntityProcessor2-->
+			<!--<plugin>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                    <compilerArgument>-proc:none</compilerArgument>
+                </configuration>
+            </plugin>-->
+			<!--/JPAMetaModelEntityProcessor2-->
+
+			<!--JPAMetaModelEntityProcessor3-->
+			<plugin>
+				<groupId>org.bsc.maven</groupId>
+				<artifactId>maven-processor-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>process</id>
+						<goals>
+							<goal>process</goal>
+						</goals>
+						<phase>generate-sources</phase>
+						<configuration>
+							<!-- source output directory -->
+							<outputDirectory>target/metamodel</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.3</version>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>target/metamodel</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<!--/JPAMetaModelEntityProcessor3-->
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+					<!--Added for JPAMetaModelEntityProcessor-->
+					<!--<compilerArgument>-proc:none</compilerArgument>-->
+					<!--/Added for JPAMetaModelEntityProcessor-->
+				</configuration>
+			</plugin>
+
 		</plugins>
 	</build>
-	
 
 </project>

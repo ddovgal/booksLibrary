@@ -3,25 +3,12 @@
 <head>
     <title>The Library</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <link href="../static/css/indexLayout.css" th:href="@{/css/indexLayout.css}" rel="stylesheet"/>
+    <link href="../static/css/indexStyles.css" th:href="@{/css/indexStyles.css}" rel="stylesheet"/>
 </head>
 <body>
-<div class="wrapper row1">
-    <header id="header" class="clear">
-        <div id="hgroup">
-            <h1><a href="#">The Library</a></h1>
-            <h2>Free book repository for all</h2>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">All books</a></li>
-                <li><a href="#">Authors</a></li>
-                <li class="last"><a href="#">Genres</a></li>
-            </ul>
-        </nav>
-    </header>
-</div>
+<!-- header -->
+<div th:replace="header :: #intro"/>
+<!-- /header -->
 <!-- content -->
 <div class="wrapper row2">
     <div id="container" class="clear">
@@ -100,19 +87,15 @@
 </div>
 <!-- genres content -->
 <div id="genres">
-    <a th:href="@{'/search/' + ${genres.get(0).getId()}}" th:text="${genres.get(0).getName()}">Genre 1</a>
-    <a th:href="@{'/search/' + ${genres.get(1).getId()}}" th:text="${genres.get(1).getName()}">Genre 2</a>
-    <a th:href="@{'/search/' + ${genres.get(2).getId()}}" th:text="${genres.get(2).getName()}">Genre 3</a>
-    <a th:href="@{'/search/' + ${genres.get(3).getId()}}" th:text="${genres.get(3).getName()}">Genre 4</a>
-    <a th:href="@{'/search/' + ${genres.get(4).getId()}}" th:text="${genres.get(4).getName()}">Genre 5</a>
+    <a th:href="@{/search/book(tags=${genres.get(0).getId()})}" th:text="${genres.get(0).getName()}">Genre 1</a>
+    <a th:href="@{/search/book(tags=${genres.get(1).getId()})}" th:text="${genres.get(1).getName()}">Genre 2</a>
+    <a th:href="@{/search/book(tags=${genres.get(2).getId()})}" th:text="${genres.get(2).getName()}">Genre 3</a>
+    <a th:href="@{/search/book(tags=${genres.get(3).getId()})}" th:text="${genres.get(3).getName()}">Genre 4</a>
+    <a th:href="@{/search/book(tags=${genres.get(4).getId()})}" th:text="${genres.get(4).getName()}">Genre 5</a>
 </div>
 <!-- /genres content -->
 <!-- footer -->
-<div class="wrapper row3">
-    <footer id="footer" class="clear">
-        <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="https://github.com/ddovgal">Dima Dovgal</a></p>
-        <p class="fl_right">Spring MVC - Thymeleaf </p>
-    </footer>
-</div>
+<div th:replace="footer :: #intro"/>
+<!-- /footer -->
 </body>
 </html>

@@ -1,0 +1,575 @@
+@import url("searchBoxStyles.css");
+
+/*
+HTML 5 Template Name: Basic 79
+File: Layout CSS
+Author: OS Templates
+Author URI: http://www.os-templates.com/
+Licence: <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>
+*/
+
+html {
+    overflow-y: scroll;
+    border-left-width: medium;
+    background-color: undefined;
+    font-style: normal;
+    font-weight: 400;
+}
+
+/* Forces a scrollbar when the viewport is larger than the websites content - CSS3 */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    color: #979797;
+    background-color: #FFFFFF;
+    font-weight: 400;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.clear:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+}
+
+.clear {
+    display: block;
+    clear: both;
+}
+
+html[xmlns] .clear {
+    display: block;
+}
+
+* html .clear {
+    height: 1%;
+}
+
+a {
+    outline: none;
+    text-decoration: none;
+}
+
+code {
+    font-weight: normal;
+    font-style: normal;
+    font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.fl_left {
+    float: left;
+}
+
+.fl_right {
+    float: right;
+}
+
+img {
+    padding: 0;
+    border: none;
+    line-height: normal;
+    vertical-align: middle;
+    border-radius: 10px;
+}
+
+.imgholder, .imgl, .imgr {
+    padding: 4px;
+    border: 1px solid #D6D6D6;
+    text-align: center;
+}
+
+.imgl {
+    float: left;
+    margin: 0 15px 15px 0;
+    clear: left;
+}
+
+.imgr {
+    float: right;
+    margin: 0 0 15px 15px;
+    clear: right;
+}
+
+/*----------------------------------------------HTML 5 Overrides-------------------------------------*/
+
+address, article, aside, figcaption, figure, footer, header, nav, section {
+    display: block;
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+q {
+    display: block;
+    padding: 0 10px 8px 10px;
+    color: #979797;
+    background-color: #ECECEC;
+    font-style: italic;
+    line-height: normal;
+}
+
+q:before {
+    content: '“ ';
+    font-size: 26px;
+}
+
+q:after {
+    content: ' „';
+    font-size: 26px;
+    line-height: 0;
+}
+
+/* ----------------------------------------------Wrapper-------------------------------------*/
+
+div.wrapper {
+    display: block;
+    width: 960px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: left;
+}
+
+.row1, .row1 a {
+    color: #979797;
+    background-color: #FFFFFF;
+}
+
+.row2 {
+    color: #979797;
+    background-color: #FFFFFF;
+}
+
+.row2 a {
+    color: #B56D00;
+    background-color: #FFFFFF;
+    text-align: left;
+    float: right;
+    margin-top: -10px;
+    margin-right: 7px;
+}
+
+.row3 {
+    border-top: 1px solid #DEDEDE;
+}
+
+.row3, .row3 a {
+    color: #979797;
+    background-color: #FFFFFF;
+}
+
+/*----------------------------------------------Generalise-------------------------------------*/
+
+#header, #container, #footer, #searchbox {
+    display: block;
+    width: 960px;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: normal;
+    line-height: normal;
+    text-transform: uppercase;
+}
+
+address {
+    font-style: normal;
+}
+
+blockquote, q {
+    display: block;
+    padding: 8px 10px;
+    color: #979797;
+    background-color: #ECECEC;
+    font-style: italic;
+    line-height: normal;
+}
+
+blockquote:before, q:before {
+    content: '“ ';
+    font-size: 26px;
+}
+
+blockquote:after, q:after {
+    content: ' „';
+    font-size: 26px;
+    line-height: 0;
+}
+
+.one_third, .two_third, .three_third {
+    display: block;
+    float: left;
+    margin: 0 30px 0 0;
+}
+
+.one_third {
+    width: 300px;
+}
+
+.two_third {
+    width: 630px;
+}
+
+.three_third {
+    width: 960px;
+    float: none;
+    margin-right: 0;
+    clear: both;
+}
+
+.lastbox {
+    margin-right: 0;
+}
+
+/*----------------------------------------------Header-------------------------------------*/
+
+#header {
+}
+
+#header #hgroup {
+    padding: 20px 0 0 0;
+    float: left;
+}
+
+#header #hgroup h1, #header #hgroup h2 {
+    font-weight: normal;
+    text-transform: none;
+}
+
+#header #hgroup h1 {
+    font-size: 36px;
+}
+
+#header #hgroup h2 {
+    font-size: 13px;
+}
+
+#header nav {
+    display: block;
+    float: right;
+    margin-top: 20px;
+    margin-right: 0;
+    margin-bottom: 0;
+    padding: 20px 0;
+}
+
+#header nav ul {
+}
+
+#header nav li {
+    display: inline;
+    margin-right: 25px;
+    text-transform: uppercase;
+}
+
+#header nav li.last {
+    margin-right: 0;
+}
+
+#header nav li a {
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 8px;
+    padding-bottom: 4px;
+    color: #FFFFFF;
+    background-color: #999;
+    border-radius: 5px;
+}
+
+#header nav li a:hover {
+    color: #979797;
+    background-color: #FFFFFF;
+}
+
+/*----------------------------------------------Content Area-------------------------------------*/
+
+#container {
+    padding: 30px 0;
+    text-align: left;
+}
+
+.wrapper.row2 #container label {
+
+}
+
+#container section {
+    display: block;
+    width: 100%;
+    margin: 0 0 30px 0;
+    padding: 0;
+}
+
+#container .last {
+    margin: 0;
+}
+
+#container .more {
+    text-align: right;
+}
+
+/* ------Shout-----*/
+
+#container #shout {
+    margin-bottom: 50px;
+    padding: 30px 0;
+    border-top: 1px solid #DEDEDE;
+    border-bottom: 1px solid #DEDEDE;
+}
+
+#container #shout h1 {
+    font-size: 50px;
+    font-weight: normal;
+    font-style: italic;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+#container #shout p {
+    font-size: 16px;
+    padding-bottom: 0;
+    line-height: 1.8em;
+    text-align: right;
+    margin-bottom: -10px;
+    padding-right: 20px;
+    margin-top: 5px;
+}
+
+/* ------Books-----*/
+
+#container #books {
+    margin-bottom: 30px;
+    line-height: 1.6em;
+    margin-top: 30px;
+}
+
+#container #books article {
+
+}
+
+#container #books article h2 {
+    font-size: 19px;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+#container #books article p {
+    margin-top: 10px;
+    padding: 0;
+}
+
+#container #books article img {
+    float: left;
+    width: 100px;
+    height: 140px;
+    margin-right: 13px;
+    margin-left: 0;
+    padding: 4px;
+    border: 1px solid #DEDEDE;
+}
+
+#container #books article footer {
+    margin: 10px 0 0 0;
+}
+
+/* ------Authors-----*/
+
+#container #authors {
+    margin-bottom: 30px;
+    line-height: 1.6em;
+    margin-top: 30px;
+}
+
+#container #authors article {
+
+}
+
+#container #authors article h2 {
+    font-size: 19px;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+    text-align: center;
+}
+
+#container #authors article p {
+    margin-top: 10px;
+    padding: 0;
+}
+
+#container #authors article img {
+    float: left;
+    width: 100px;
+    height: 140px;
+    margin-right: 13px;
+    margin-left: 0;
+    padding: 4px;
+    border: 1px solid #DEDEDE;
+}
+
+#container #authors article footer {
+    margin: 10px 0 0 0;
+}
+
+/*----------------------------------------------Genres-------------------------------------*/
+
+#genres {
+    text-transform: uppercase;
+    text-align: center;
+    font-size: large;
+    margin-bottom: 45px;
+}
+
+#genres a {
+    padding: 2px 8px;
+    color: #FFFFFF;
+    background-color: #666666;
+    border-radius: 5px;
+    margin-left: 3px;
+    margin-right: 4px;
+}
+
+#genres a:hover {
+    color: #979797;
+    background-color: #FFFFFF;
+}
+
+/*----------------------------------------------Footer-------------------------------------*/
+
+#footer {
+    padding: 20px 0;
+}
+
+#footer p {
+    margin: 0;
+    padding: 0;
+}
+
+.delimiter {
+    text-align: center;
+    font-size: 33px;
+    font-style: normal;
+    color: #7E7E7E;
+    font-variant: normal;
+    text-shadow: 0px 0px;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, sans-serif;
+    font-weight: 400;
+
+}
+
+/*----------------------------------------------Searchbox-------------------------------------*/
+
+#searchbox {
+    display: table;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 20px;
+    text-align: center;
+    border-radius: 5px;
+    border-width: 2px;
+    border-style: solid;
+    width: 650px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    background-color: #ebebeb;
+}
+
+#searchbox #search_choice {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-style: solid;
+    border-right-style: solid;
+    margin: 0 auto;
+    border-left-style: solid;
+    border-right-width: 2px;
+    border-bottom-width: 2px;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    display: table;
+}
+
+#searchbox #search_choice a {
+    padding-right: 25px;
+    padding-left: 25px;
+    color: #979797;
+    background-color: transparent;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+#searchbox #search_choice a.active {
+    cursor: default;
+    border-color: #4285F4 #4285F4 #4285F4 2px;
+    background-color: #979797;
+    color: #fff;
+}
+
+#searchbox #search_choice a.active:hover {
+    color: #fff;
+}
+
+#searchbox #search_choice a:hover {
+    color: #B56D00;
+}
+
+#searchbox #search_fields {
+    text-align: left;
+    width: 350px;
+    float: left;
+    margin-top: 15px;
+}
+
+#searchbox #l_part_search {
+    text-align: center;
+    margin-right: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    padding-right: 10px;
+    padding-left: 10px;
+    width: 180px;
+    float: right;
+    padding-top: 8px;
+    font-size: medium;
+    color: #000000;
+}
+
+#searchbox #l_part_search .flexsearch--form {
+    overflow: hidden;
+    position: relative;
+    padding-right: 16px;
+    width: 50px;
+    margin-left: 2px;
+    margin-right: 2px;
+    float: left;
+}
+
+#searchbox #l_part_search .flexsearch--input {
+    font-size: x-small;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+
+#searchbox #l_part_search .modal-2 {
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: 5px;
+    margin-left: auto;
+    width: 0px;
+    padding-top: 3px;
+
+}

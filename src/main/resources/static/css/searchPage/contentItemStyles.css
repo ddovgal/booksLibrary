@@ -1,0 +1,107 @@
+#articles_container {
+    color: #555;
+    line-height: 1.8em;
+    font-size: 12px;;
+    margin-top: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    width: 800px;
+    /* [disabled]background-color: #F8F8F8; */
+    border-radius: 10px;
+    text-align: left;
+}
+
+#articles_container h2 {
+    line-height: 1.5em;
+    font-weight: normal;
+    font-variant: normal;
+    font-style: normal;
+    font-size: 24px;
+    padding-top: 20px;
+    padding-right: 0;
+    padding-left: 10px;
+    padding-bottom: 0;
+    color: #555;
+    text-transform: none;
+}
+
+#articles_container p {
+    margin-right: 0;
+    margin-left: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-left: 0;
+    padding-bottom: 8px;
+    line-height: 1.8em;
+    font-weight: normal;
+    font-variant: normal;
+    font-style: normal;
+    font-size: 12px;
+}
+
+#articles_container a {
+    color: #B56D00;
+    text-decoration: none;
+}
+
+#articles_container p.spec {
+    padding-right: 0;
+    padding-left: 0;
+    text-align: right;
+    vertical-align: bottom;
+    clear: left;
+    border-bottom: 1px solid #dedede;
+}
+
+#articles_container p.infopost {
+    margin-bottom: 12px;
+    padding: 3px 12px;
+    background-color: #ebebeb;
+    border-radius: 3px;
+}
+
+#articles_container a.rm {
+    color: #999;
+    padding-top: 5px;
+    padding-right: 16px;
+    padding-left: 16px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    background-color: #ebebeb;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+#articles_container a.com {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: #555;
+    float: right;
+}
+
+#articles_container img {
+    border: 1px solid #d4d4d4;
+    background-color: #fff;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
+    border-radius: 10px;
+    width: 178px;
+    height: 244px;
+    position: relative;
+}
+
+#articles_container img.fl {
+    margin-top: 4px;
+    margin-left: 4px;
+    float: left;
+    border-radius: 10px;
+    margin-right: 16px;
+}
+
+.item {
+
+}

@@ -17,12 +17,12 @@ public class AuthorService {
         return authorRepository.findById(id);
     }
 
-    public List<Author> findByNameContains(String name) {
-        return authorRepository.findByNameContains(name);
-    }
-
     public List<Author> findThreeByRandom() {
         return authorRepository.findThreeByRandom();
+    }
+
+    public List<Author> findByNameContaining(String notFullName) {
+        return authorRepository.findByNameContaining(notFullName);
     }
 
 }

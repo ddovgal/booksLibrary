@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>The Library</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../static/css/searchPage/searchPageStyles.css" th:href="@{/css/searchPage/searchPageStyles.css}"
+          rel="stylesheet"/>
+    <link href="../static/css/searchPage/checkboxStyles.css" th:href="@{/css/searchPage/checkboxStyles.css}"
+          rel="stylesheet" type="text/css"/>
+    <link href="../static/css/searchPage/selectBoxStyles.css" th:href="@{/css/searchPage/selectBoxStyles.css}"
+          rel="stylesheet" type="text/css"/>
+    <link href="../static/css/searchPage/pagination.css" th:href="@{/css/searchPage/pagination.css}" rel="stylesheet"
+          type="text/css"/>
+    <link href="../static/css/searchPage/contentItemStyles.css" th:href="@{/css/searchPage/contentItemStyles.css}"
+          rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<!-- header -->
+<div th:replace="header :: #intro"/>
+<!-- /header -->
+<!-- search box -->
+<div id="searchbox">
+    <div id="search_choice">
+        <a th:href="@{/search/book(page=0)}" class="active">Books</a>
+        <a th:href="@{/search/author(page=0)}">Authors</a>
+    </div>
+    <div id="search_fields">
+        <form class="flexsearch--form" action="#" method="get">
+            <input class="flexsearch--input" placeholder="Book name"/>
+        </form>
+        <form class="flexsearch--form" action="#" method="get">
+            <input class="flexsearch--input" placeholder="Author name"/>
+        </form>
+        <form class="flexsearch--form" action="#" method="get">
+            <input class="flexsearch--input" placeholder="Genres, divided by comma"/>
+        </form>
+    </div>
+    <div id="l_part_search">
+        Ratio
+        <br/>
+        <form class="flexsearch--form" action="#" method="get">
+            <input class="flexsearch--input" placeholder="Min"/>
+        </form>
+        <form class="flexsearch--form" action="#" method="get">
+            <input class="flexsearch--input" placeholder="Max"/>
+        </form>
+        <div class="modal-2">
+            <div class="checkbox inline">
+                <input type="checkbox"/>
+                <label>Same</label>
+            </div>
+        </div>
+        Sort by
+        <br/>
+        <label>
+            <select>
+                <option>Select Box</option>
+                <option>Short Option</option>
+                <option>This Is A Longer Option</option>
+            </select>
+        </label>
+    </div>
+</div>
+<!-- /search box -->
+<!-- founded -->
+<div id="articles_container">
+    <!-- item -->
+    <div class="item">
+        <h2>Founded 1</h2>
+        <p class="infopost">Author: <a href="#">Author</a> &nbsp;|&nbsp; Containing genres: <a href="#">templates</a>,
+            <a href="#">internet</a>
+            <!--<a href="#" class="com">Comments <span>(11)</span></a>--></p>
+        <img src="img1.jpg" alt="image" class="fl"/>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. <a
+                href="#">Suspendisse bibendum. Cras id urna.</a> Morbi
+            tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec
+            mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla
+            magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit
+            magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet,
+            consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac
+            convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo.</p>
+        <p class="spec"><a href="#" class="rm">Read more »</a></p>
+    </div>
+    <!-- /item -->
+    <!-- item -->
+    <div class="item">
+        <h2>Founded 2</h2>
+        <p class="infopost">Author: <a href="#">Author</a> &nbsp;|&nbsp; Containing genres: <a href="#">templates</a>,
+            <a href="#">internet</a>
+            <!--<a href="#" class="com">Comments <span>(11)</span></a>--></p>
+        <img src="img.jpg" width="178" height="244" alt="image" class="fl"/>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. <a
+                href="#">Suspendisse bibendum. Cras id urna.</a> Morbi
+            tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec
+            mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla
+            magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit
+            magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet,
+            consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac
+            convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo.</p>
+        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. <a
+                href="#">Suspendisse bibendum. Cras id urna.</a> Morbi
+            tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec
+            mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla
+            magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit
+            magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet,
+            consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac
+            convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo.</p>
+        <p class="spec"><a href="#" class="rm">Read more »</a></p>
+    </div>
+    <!-- /item -->
+</div>
+<!-- pagination content -->
+<ul class="pagination modal-2">
+    <li><a href="#" class="prev">&laquo; </a></li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#" class="active">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">8</a></li>
+    <li><a href="#">9</a></li>
+    <li><a href="#" class="next">  &raquo;</a></li>
+</ul>
+<!-- /pagination content -->
+<!-- footer -->
+<div th:replace="footer :: #intro"/>
+<!-- /footer -->
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<link href="../static/css/headerStyles.css" th:href="@{/css/headerStyles.css}" rel="stylesheet"/>
+<body>
+<div id="intro" class="wrapper row1">
+    <header id="header" class="clear">
+        <div id="hgroup">
+            <h1><a th:href="@{/}">The Library</a></h1>
+            <h2>Free book repository for all</h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a th:href="@{/}">Home</a></li>
+                <li><a th:href="@{/search/book(p=0)}">Search</a></li>
+                <li><a th:href="@{/search/book}">All books</a></li>
+                <li class="last"><a th:href="@{/search/author}">All authors</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+</body>
+</html>
