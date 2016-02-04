@@ -1,7 +1,8 @@
 package ua.error_404.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import ua.error_404.entity.Book;
@@ -24,10 +25,9 @@ public class BookService {
         return bookRepository.findThreeByRandom();
     }
 
-    public List<Book> findBySpecifications(List<Specification<Book>> specifications, Sort sort) {
+    public Page<Book> findPageBySpecifications(List<Specification<Book>> specifications, Pageable pageable) {
         SpecificationsBuilder<Book> builder = new SpecificationsBuilder<>(specifications);
-        if (sort != null) return bookRepository.findAll(builder.buildBySpecsConjunction(), sort);
-        else return bookRepository.findAll(builder.buildBySpecsConjunction());
+        return bookRepository.findAll(builder.buildBySpecsConjunction(), pageable);
     }
 
 }

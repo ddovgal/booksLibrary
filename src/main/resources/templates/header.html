@@ -10,9 +10,9 @@
         <nav>
             <ul>
                 <li><a th:href="@{/}">Home</a></li>
-                <li><a th:href="@{/search/book(p=0)}">Search</a></li>
-                <li><a th:href="@{/search/book}">All books</a></li>
-                <li class="last"><a th:href="@{/search/author}">All authors</a></li>
+                <li><a th:href="@{/search/book(page=-1)}">Search</a></li>
+                <li><a th:href="@{/search/book(page=1)}">All books</a></li>
+                <li class="last"><a th:href="@{/search/author(page=1)}">All authors</a></li>
             </ul>
         </nav>
     </header>

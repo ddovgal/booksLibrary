@@ -1,5 +1,6 @@
 package ua.error_404.specification;
 
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.domain.Specification;
 import ua.error_404.entity.*;
@@ -8,6 +9,8 @@ import javax.persistence.criteria.SetJoin;
 import java.util.List;
 
 public final class BookSpecifications {
+
+    private static final int PAGE_SIZE = 5;
 
     private BookSpecifications() {
     }
@@ -24,7 +27,7 @@ public final class BookSpecifications {
 
     public static Specification<Book> hasOneOfGenres(List<String> genres) {
         return (root, criteriaQuery, criteriaBuilder) -> {
-            criteriaQuery.distinct(true); //use to disable getting duplicates when more then 1 book's genre is in genres criteria search
+            criteriaQuery.distinct(true); //use to disable getting duplicates when more then 1 book's genre is in genres list of criteria search
             SetJoin<Book, Genre> bookGenres = root.join(Book_.genres);
             return bookGenres.get(Genre_.name).in(genres);
         };
@@ -36,6 +39,10 @@ public final class BookSpecifications {
 
     public static Sort sortBy(String chosenField, boolean asc) {
         return new Sort((asc ? Sort.Direction.ASC : Sort.Direction.DESC), chosenField);
+    }
+
+    public static PageRequest paginate(Integer page, Sort sort) {
+        return new PageRequest(page, PAGE_SIZE, sort);
     }
 
 }

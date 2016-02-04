@@ -87,11 +87,16 @@
 </div>
 <!-- genres content -->
 <div id="genres">
-    <a th:href="@{/search/book(tags=${genres.get(0).getId()})}" th:text="${genres.get(0).getName()}">Genre 1</a>
-    <a th:href="@{/search/book(tags=${genres.get(1).getId()})}" th:text="${genres.get(1).getName()}">Genre 2</a>
-    <a th:href="@{/search/book(tags=${genres.get(2).getId()})}" th:text="${genres.get(2).getName()}">Genre 3</a>
-    <a th:href="@{/search/book(tags=${genres.get(3).getId()})}" th:text="${genres.get(3).getName()}">Genre 4</a>
-    <a th:href="@{/search/book(tags=${genres.get(4).getId()})}" th:text="${genres.get(4).getName()}">Genre 5</a>
+    <a th:href="@{/search/book(page=1, tags=${genres.get(0).getName()})}" th:text="${genres.get(0).getName()}">Genre
+        1</a>
+    <a th:href="@{/search/book(page=1, tags=${genres.get(1).getName()})}" th:text="${genres.get(1).getName()}">Genre
+        2</a>
+    <a th:href="@{/search/book(page=1, tags=${genres.get(2).getName()})}" th:text="${genres.get(2).getName()}">Genre
+        3</a>
+    <a th:href="@{/search/book(page=1, tags=${genres.get(3).getName()})}" th:text="${genres.get(3).getName()}">Genre
+        4</a>
+    <a th:href="@{/search/book(page=1, tags=${genres.get(4).getName()})}" th:text="${genres.get(4).getName()}">Genre
+        5</a>
 </div>
 <!-- /genres content -->
 <!-- footer -->

@@ -19,106 +19,89 @@
 <div th:replace="header :: #intro"/>
 <!-- /header -->
 <!-- search box -->
-<div id="searchbox">
+<form th:action="@{'/search/' + ${state lt 0 ? 'book' : 'author'}}" id="searchbox" method="get">
     <div id="search_choice">
-        <a th:href="@{/search/book(page=0)}" class="active">Books</a>
-        <a th:href="@{/search/author(page=0)}">Authors</a>
+        <a th:href="@{/search/book(page=-1)}" th:attr="class=${state lt 0 ? 'active' : null}">Books</a>
+        <a th:href="@{/search/author(page=-1)}" th:attr="class=${state gt 0 ? 'active' : null}">Authors</a>
     </div>
     <div id="search_fields">
-        <form class="flexsearch--form" action="#" method="get">
-            <input class="flexsearch--input" placeholder="Book name"/>
-        </form>
-        <form class="flexsearch--form" action="#" method="get">
-            <input class="flexsearch--input" placeholder="Author name"/>
-        </form>
-        <form class="flexsearch--form" action="#" method="get">
-            <input class="flexsearch--input" placeholder="Genres, divided by comma"/>
-        </form>
+        <div th:if="${state lt 0}" class="flexsearch--form">
+            <input class="flexsearch--input" name="name" placeholder="Book name"/>
+        </div>
+        <div class="flexsearch--form">
+            <input class="flexsearch--input" th:attr="name=${state lt 0 ? 'author' : 'name'}"
+                   placeholder="Author name"/>
+        </div>
+        <div th:if="${state lt 0}" class="flexsearch--form">
+            <input class="flexsearch--input" name="tags" placeholder="Genres, divided by comma"/>
+        </div>
     </div>
-    <div id="l_part_search">
+    <div th:if="${state lt 0}" id="r_part_search">
         Ratio
         <br/>
-        <form class="flexsearch--form" action="#" method="get">
-            <input class="flexsearch--input" placeholder="Min"/>
-        </form>
-        <form class="flexsearch--form" action="#" method="get">
-            <input class="flexsearch--input" placeholder="Max"/>
-        </form>
+        <div class="flexsearch--form">
+            <input class="flexsearch--input" name="min" placeholder="Min"/>
+        </div>
+        <div class="flexsearch--form">
+            <input class="flexsearch--input" name="max" placeholder="Max"/>
+        </div>
         <div class="modal-2">
             <div class="checkbox inline">
-                <input type="checkbox"/>
+                <input type="checkbox" name="same"/>
                 <label>Same</label>
             </div>
         </div>
         Sort by
         <br/>
         <label>
-            <select>
-                <option>Select Box</option>
-                <option>Short Option</option>
-                <option>This Is A Longer Option</option>
+            <select name="sorting">
+                <option>RatioD</option>
+                <option>RatioA</option>
+                <option>NameA</option>
+                <option>NameD</option>
             </select>
         </label>
     </div>
-</div>
+    <input type="hidden" name="page" value="1"/>
+    <input class="myBtn" type="submit" value="Search"/>
+</form>
 <!-- /search box -->
 <!-- founded -->
 <div id="articles_container">
-    <!-- item -->
-    <div class="item">
-        <h2>Founded 1</h2>
-        <p class="infopost">Author: <a href="#">Author</a> &nbsp;|&nbsp; Containing genres: <a href="#">templates</a>,
-            <a href="#">internet</a>
-            <!--<a href="#" class="com">Comments <span>(11)</span></a>--></p>
-        <img src="img1.jpg" alt="image" class="fl"/>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. <a
-                href="#">Suspendisse bibendum. Cras id urna.</a> Morbi
-            tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec
-            mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla
-            magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit
-            magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac
-            convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo.</p>
-        <p class="spec"><a href="#" class="rm">Read more »</a></p>
-    </div>
-    <!-- /item -->
-    <!-- item -->
-    <div class="item">
-        <h2>Founded 2</h2>
-        <p class="infopost">Author: <a href="#">Author</a> &nbsp;|&nbsp; Containing genres: <a href="#">templates</a>,
-            <a href="#">internet</a>
-            <!--<a href="#" class="com">Comments <span>(11)</span></a>--></p>
-        <img src="img.jpg" width="178" height="244" alt="image" class="fl"/>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. <a
-                href="#">Suspendisse bibendum. Cras id urna.</a> Morbi
-            tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec
-            mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla
-            magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit
-            magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac
-            convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo.</p>
-        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec libero. <a
-                href="#">Suspendisse bibendum. Cras id urna.</a> Morbi
-            tincidunt, orci ac convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo. Donec
-            mattis, purus nec placerat bibendum, dui pede condimentum odio, ac blandit ante orci ut diam. Cras fringilla
-            magna. Phasellus suscipit, leo a pharetra condimentum, lorem tellus eleifend magna, eget fringilla velit
-            magna id neque. Curabitur vel urna. In tristique orci porttitor ipsum. Lorem ipsum dolor sit amet,
-            consectetuer adipiscing elit. Donec libero. Suspendisse bibendum. Cras id urna. Morbi tincidunt, orci ac
-            convallis aliquam, lectus turpis varius lorem, eu posuere nunc justo tempus leo.</p>
-        <p class="spec"><a href="#" class="rm">Read more »</a></p>
-    </div>
-    <!-- /item -->
+    <!-- book items -->
+    <th:block th:if="${state lt 0}" th:each="book : ${books}">
+        <div class="item">
+            <h2 th:text="${book.getName()}">Founded 1</h2>
+            <p class="infopost">Author:
+                <a th:href="@{'/author/' + ${book.getAuthor().getId()}}"
+                   th:text="${book.getAuthor().getName()}">Author</a> &nbsp;|&nbsp; Containing genres:
+                <th:block th:each="genre : ${book.getGenres()}">
+                    <a th:href="@{/search/book/(page=1,tags=${genre.getName()})}"
+                       th:text="${genre.getName()} + ', '">genre1</a>
+                </th:block>
+            </p>
+            <img th:src="@{'/img/book/' + ${book.getId()}}" alt="image" class="fl"/>
+            <p th:text="${book.getDescription()}">Text</p>
+            <p class="spec"><a th:href="@{'/book/' + ${book.getId()}}" class="rm">Read more »</a></p>
+        </div>
+    </th:block>
+    <!-- /book items -->
+    <!-- author items -->
+    <th:block th:if="${state gt 0}" th:each="author : ${authors}">
+        <div class="item">
+            <h2 th:text="${author.getName()}">Founded 1</h2>
+            <img th:src="@{'/img/author/' + ${author.getId()}}" alt="image" class="fl"/>
+            <p th:text="${author.getDescription()}">Text</p>
+            <p class="spec"><a th:href="@{'/author/' + ${author.getId()}}" class="rm">Read more »</a></p>
+        </div>
+    </th:block>
+    <!-- /author items -->
 </div>
 <!-- pagination content -->
-<ul class="pagination modal-2">
-    <li><a href="#" class="prev">&laquo; </a></li>
-    <li><a href="#">1</a></li>
-    <li><a href="#">2</a></li>
-    <li><a href="#" class="active">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">8</a></li>
-    <li><a href="#">9</a></li>
-    <li><a href="#" class="next">  &raquo;</a></li>
+<ul class="pagination modal-2" th:if="${state eq -1 or state eq 1}">
+    <li th:each="page : ${pages}">
+        <a th:href="@{${page.getReference()}}" th:attr="class=${page.getClassType()}" th:text="${page.getPageNumber()}">PageNum</a>
+    </li>
 </ul>
 <!-- /pagination content -->
 <!-- footer -->
