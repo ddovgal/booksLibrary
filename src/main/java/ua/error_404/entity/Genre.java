@@ -2,6 +2,7 @@ package ua.error_404.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -18,10 +19,10 @@ public class Genre {
     private short recommendedAge;
 
     @ManyToMany(mappedBy = "genres")
-    private Set<Book> books;
+    private Set<Book> books = new HashSet<>();
 
 
-    protected Genre() {
+    public Genre() {
     }
 
     public Genre(String name, short recommendedAge) {

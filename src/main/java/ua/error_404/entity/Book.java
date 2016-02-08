@@ -2,6 +2,7 @@ package ua.error_404.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -28,7 +29,7 @@ public class Book {
             joinColumns = @JoinColumn(name = "book_id"),
             inverseJoinColumns = @JoinColumn(name = "genre_id")
     )
-    private Set<Genre> genres;
+    private Set<Genre> genres = new HashSet<>();
 
     @Column(columnDefinition = "VARCHAR(500)")
     private String description;
@@ -37,7 +38,7 @@ public class Book {
     private byte[] picture;
 
 
-    protected Book() {
+    public Book() {
     }
 
     public Book(String name, Author author, Set<Genre> genres, String description) {

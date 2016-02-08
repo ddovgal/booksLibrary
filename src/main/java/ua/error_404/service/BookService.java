@@ -5,6 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import ua.error_404.entity.Book;
 import ua.error_404.repository.BookRepository;
 import ua.error_404.specification.SpecificationsBuilder;
@@ -28,6 +29,11 @@ public class BookService {
     public Page<Book> findPageBySpecifications(List<Specification<Book>> specifications, Pageable pageable) {
         SpecificationsBuilder<Book> builder = new SpecificationsBuilder<>(specifications);
         return bookRepository.findAll(builder.buildBySpecsConjunction(), pageable);
+    }
+
+    @Transactional
+    public Book save(Book book) {
+        return bookRepository.save(book);
     }
 
 }

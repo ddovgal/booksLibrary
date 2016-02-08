@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>The Library</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link href="../static/css/createBookPage/searchPageStyles.css" th:href="@{/css/createBookPage/searchPageStyles.css}"
+          rel="stylesheet"/>
+    <link href="../static/css/createBookPage/searchBoxStyles.css" th:href="@{/css/createBookPage/searchBoxStyles.css}"
+          rel="stylesheet"/>
+    <link href="../static/css/createBookPage/selectBoxStyles.css" th:href="@{/css/createBookPage/selectBoxStyles.css}"
+          rel="stylesheet"/>
+</head>
+<body>
+<!-- header -->
+<div th:replace="header :: #intro"/>
+<!-- /header -->
+<!-- create box -->
+<form id="bookCreationBox" enctype="multipart/form-data" method="post" th:action="@{/new/book/save}"
+      th:object="${book}">
+    <div id="search_choise"><a class="active">New book creation</a></div>
+    <div class="flexsearch--form">
+        <input class="flexsearch--input" placeholder="Book name" th:field="*{name}"/>
+    </div>
+    <label>
+        <select th:remove="all-but-first" th:field="*{author}">
+            <option th:each="author : ${authors}" th:value="${author.getId()}" th:text="${author.getName()}">Select
+                Box
+            </option>
+            <option>Short Option</option>
+            <option>This Is A Longer Option</option>
+        </select>
+    </label>
+    <br/>
+    Book image
+    <input type="file" id="fileField" name="image"/>
+    <textarea id="textarea" th:field="*{description}" placeholder="Book description"></textarea>
+    <select id="tags" name="tags" multiple="multiple" th:remove="all-but-first" th:field="*{genres}">
+        <option th:each="genre : ${genres}" th:value="${genre.getId()}" th:text="${genre.getName()}"> Select Box
+        </option>
+        <option> Select Box</option>
+        <option> Select Box</option>
+        <option> Select Box</option>
+        <option>Short Option</option>
+        <option>This Is A Longer Option</option>
+    </select>
+    <input type="submit" class="myBtn" value="Save this"/>
+</form>
+<!-- /create box -->
+<!-- footer -->
+<div th:replace="footer :: #intro"/>
+<!-- /footer -->
+</body>
+</html>

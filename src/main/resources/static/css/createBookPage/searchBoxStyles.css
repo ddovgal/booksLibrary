@@ -1,0 +1,47 @@
+.flexsearch--form {
+    overflow: hidden;
+    padding-right: 16px;
+    width: 400px;
+    float: left;
+    margin-top: 18px;
+    margin-left: 13px;
+}
+
+.flexsearch--input-wrapper {
+    padding: 0 66px 0 0; /* Right padding for submit button width */
+    overflow: hidden;
+}
+
+.flexsearch--input {
+    width: 100%;
+}
+
+/***********************
+ * Configurable Styles *
+ ***********************/
+.flexsearch {
+    padding: 0 25px 0 200px; /* Padding for other horizontal elements */
+}
+
+.flexsearch--input {
+    border: 1px solid #888;
+    border-radius: 35px;
+    color: #333;
+    font-family: 'Helvetica', sans-serif;
+    font-size: 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    padding-left: 10px;
+}
+
+.flexsearch--input:focus {
+    outline: none;
+    border-color: #333;
+}
+
+::-webkit-input-placeholder {
+    color: #888;
+}

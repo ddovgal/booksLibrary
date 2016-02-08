@@ -19,7 +19,7 @@
 <div th:replace="header :: #intro"/>
 <!-- /header -->
 <!-- search box -->
-<form th:action="@{'/search/' + ${state lt 0 ? 'book' : 'author'}}" id="searchbox" method="get">
+<form th:action="@{'/search/' + ${state lt 0 ? 'book' : 'author'}}" id="bookCreationBox" method="get">
     <div id="search_choice">
         <a th:href="@{/search/book(page=-1)}" th:attr="class=${state lt 0 ? 'active' : null}">Books</a>
         <a th:href="@{/search/author(page=-1)}" th:attr="class=${state gt 0 ? 'active' : null}">Authors</a>

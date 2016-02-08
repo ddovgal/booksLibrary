@@ -49,11 +49,11 @@
 		</dependency>
 
 		<!--JPAMetaModelEntityProcessor-->
-		<!--<dependency>
+		<dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-jpamodelgen</artifactId>
             <version>5.0.7.Final</version>
-        </dependency>-->
+		</dependency>
 		<!--/JPAMetaModelEntityProcessor-->
 
 	</dependencies>
@@ -90,7 +90,7 @@
 			<!--/JPAMetaModelEntityProcessor2-->
 
 			<!--JPAMetaModelEntityProcessor3-->
-			<plugin>
+			<!--<plugin>
 				<groupId>org.bsc.maven</groupId>
 				<artifactId>maven-processor-plugin</artifactId>
 				<executions>
@@ -101,7 +101,7 @@
 						</goals>
 						<phase>generate-sources</phase>
 						<configuration>
-							<!-- source output directory -->
+							&lt;!&ndash; source output directory &ndash;&gt;
 							<outputDirectory>target/metamodel</outputDirectory>
 						</configuration>
 					</execution>
@@ -125,7 +125,7 @@
 						</configuration>
 					</execution>
 				</executions>
-			</plugin>
+			</plugin>-->
 			<!--/JPAMetaModelEntityProcessor3-->
 
 			<plugin>

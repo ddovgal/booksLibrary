@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import ua.error_404.entity.Author;
 import ua.error_404.repository.AuthorRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,6 +19,15 @@ public class AuthorService {
 
     @Autowired
     AuthorRepository authorRepository;
+
+    public List<Author> findAll() {
+        List<Author> authors = new ArrayList<>();
+        for (Author author :
+                authorRepository.findAll()) {
+            authors.add(author);
+        }
+        return authors;
+    }
 
     public Author findById(Long id) {
         return authorRepository.findById(id);

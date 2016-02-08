@@ -2,6 +2,7 @@ package ua.error_404.entity;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -22,10 +23,10 @@ public class Author {
     private byte[] picture;
 
     @OneToMany(mappedBy = "author")
-    private Set<Book> books;
+    private Set<Book> books = new HashSet<>();
 
 
-    protected Author() {
+    public Author() {
     }
 
     public Author(String name, String description) {
