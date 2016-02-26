@@ -1,5 +1,7 @@
 package ua.error_404.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;
@@ -19,6 +21,7 @@ public class Genre {
     private short recommendedAge;
 
     @ManyToMany(mappedBy = "genres")
+    @JsonBackReference
     private Set<Book> books = new HashSet<>();
 
 

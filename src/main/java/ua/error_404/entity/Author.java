@@ -1,11 +1,16 @@
 package ua.error_404.entity;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import java.util.HashSet;
 import java.util.Set;
 
 @Entity
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public class Author {
 
     @Id
@@ -19,6 +24,7 @@ public class Author {
     @Column(columnDefinition = "VARCHAR(500)")
     private String description;
 
+    @JsonIgnore
     @Column(columnDefinition = "MEDIUMBLOB")
     private byte[] picture;
 
